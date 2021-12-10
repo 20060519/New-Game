@@ -243,3 +243,4 @@ Received Import Request.
 Start importing Assets/Standard Assets/Vehicles/Car/Models/SkyCar.fbx using Guid(e6fec471c20b9d148b1f87910e67bea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f7b09e5a1476d9772ce5bf92471b177') in 1.165716 seconds 
   Import took 1.170398 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
