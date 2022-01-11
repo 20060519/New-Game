@@ -10,12 +10,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float speed = 6.0f;
 
+    private int ItemCount;
+
     private Vector3 Player_pos; //プレイヤーのポジション
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -40,5 +42,15 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(moveForward * Time.deltaTime);
         Player_pos = transform.position; //プレイヤーの位置を更新
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Item")
+        {
+            Destroy(other.gameObject);
+            Debug.log 
+
+        }
     }
 }
