@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Item")
         {
             Destroy(other.gameObject);
-            Debug.log 
+            
 
         }
     }

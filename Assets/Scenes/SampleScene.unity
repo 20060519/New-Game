@@ -773,9 +773,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 2.281596
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.640798, z: 0}
 --- !u!114 &1410289304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,6 +790,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1410289302}
   speed: 6
+--- !u!135 &1410289305
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410289301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.56029403
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &1410289307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6068054994472305620, guid: 8b0ed2bc94ddb3b43866e9d4f3f135d9, type: 3}
