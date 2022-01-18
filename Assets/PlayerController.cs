@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private int ItemCount;
 
-    private Vector3 Player_pos; //ƒvƒŒƒCƒ„[‚Ìƒ|ƒWƒVƒ‡ƒ“
+    private Vector3 Player_pos; //ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½Ìƒ|ï¿½Wï¿½Vï¿½ï¿½ï¿½ï¿½
 
     // Start is called before the first frame update
     void Start()
@@ -23,25 +23,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // “ü—Í‚ğó‚¯æ‚é
+        // ï¿½ï¿½ï¿½Í‚ï¿½ï¿½ó‚¯ï¿½ï¿½
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
-        // ƒJƒƒ‰‚Ì•ûŒü‚©‚çAX-Z•½–Ê‚Ì’PˆÊƒxƒNƒgƒ‹‚ğæ“¾
+        // ï¿½Jï¿½ï¿½ï¿½ï¿½ï¿½Ì•ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½AX-Zï¿½ï¿½ï¿½Ê‚Ì’Pï¿½Êƒxï¿½Nï¿½gï¿½ï¿½ï¿½ï¿½ï¿½æ“¾
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
 
-        // •ûŒüƒL[‚Ì“ü—Í’l‚ÆƒJƒƒ‰‚ÌŒü‚«‚©‚çAˆÚ“®•ûŒü‚ğŒˆ’è
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Lï¿½[ï¿½Ì“ï¿½ï¿½Í’lï¿½ÆƒJï¿½ï¿½ï¿½ï¿½ï¿½ÌŒï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½Ú“ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Vector3 moveForward = cameraForward * inputY + Camera.main.transform.right * inputX;
 
         moveForward *= speed;
 
-        if (moveForward.magnitude > 0.01f) //ƒxƒNƒgƒ‹‚Ì’·‚³‚ª0.01f‚æ‚è‘å‚«‚¢ê‡‚ÉƒvƒŒƒCƒ„[‚ÌŒü‚«‚ğ•Ï‚¦‚éˆ—‚ğ“ü‚ê‚é(0‚Å‚Í“ü‚ê‚È‚¢‚Ì‚Åj
+        if (moveForward.magnitude > 0.01f) //ï¿½xï¿½Nï¿½gï¿½ï¿½ï¿½Ì’ï¿½ï¿½ï¿½ï¿½ï¿½0.01fï¿½ï¿½ï¿½å‚«ï¿½ï¿½ï¿½ê‡ï¿½Éƒvï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÌŒï¿½ï¿½ï¿½ï¿½ï¿½Ï‚ï¿½ï¿½éˆï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(0ï¿½Å‚Í“ï¿½ï¿½ï¿½È‚ï¿½ï¿½Ì‚Åj
         {
-            Quaternion targetRotation = Quaternion.LookRotation(moveForward);  //ƒxƒNƒgƒ‹‚Ìî•ñ‚ğQuaternion.LookRotation‚Éˆø‚«“n‚µ‰ñ“]—Ê‚ğæ“¾‚µƒvƒŒƒCƒ„[‚ğ‰ñ“]‚³‚¹‚é
+            Quaternion targetRotation = Quaternion.LookRotation(moveForward);  //ï¿½xï¿½Nï¿½gï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½Quaternion.LookRotationï¿½Éˆï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½]ï¿½Ê‚ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime);
         }
 
         controller.Move(moveForward * Time.deltaTime);
-        Player_pos = transform.position; //ƒvƒŒƒCƒ„[‚ÌˆÊ’u‚ğXV
+        Player_pos = transform.position; //ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÌˆÊ’uï¿½ï¿½ï¿½Xï¿½V
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,8 +49,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Item")
         {
             Destroy(other.gameObject);
-            
-
+            // test yamashita write
         }
     }
 }
