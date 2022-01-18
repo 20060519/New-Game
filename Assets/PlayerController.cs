@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Item")
         {
+            ItemCount++;
             Destroy(other.gameObject);
             // test yamashita write
             // 取得したアイテムの数をConsoleに表示する
