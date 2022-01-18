@@ -54,5 +54,10 @@ public class PlayerController : MonoBehaviour
             // 取得したアイテムの数をConsoleに表示する
             Debug.Log("取ったアイテムの数:" + ItemCount);
         }
+
+        if ( other.gameObject.tag == "blank_bridge" && ItemCount > 0) {
+            ItemCount--;
+            other.transform.GetComponent<MeshRenderer>().enabled = true;
+        }
     }
 }
