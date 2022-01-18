@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
             // test yamashita write
+            // 取得したアイテムの数をConsoleに表示する
+            Debug.Log("取ったアイテムの数:" + ItemCount);
         }
     }
 }
