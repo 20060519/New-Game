@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Item
   - blank_bridge
+  - bridge
   layers:
   - Default
   - TransparentFX
