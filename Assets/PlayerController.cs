@@ -34,11 +34,11 @@ public class PlayerController : MonoBehaviour
 
         if (moveForward.magnitude > 0.01f) //�x�N�g���̒�����0.01f���傫���ꍇ�Ƀv���C���[�̌�����ς��鏈��������(0�ł͓���Ȃ��̂Łj
         {
+            this.transform.Translate(moveForward * Time.deltaTime * speed);
             Quaternion targetRotation = Quaternion.LookRotation(moveForward);  //�x�N�g���̏���Quaternion.LookRotation�Ɉ����n����]�ʂ��擾���v���C���[����]������
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime);
         }
 
-        controller.Move(moveForward * Time.deltaTime);
         Player_pos = transform.position; //�v���C���[�̈ʒu���X�V
     }
 
@@ -52,14 +52,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("取ったアイテムの数:" + ItemCount);
         }
 
-        if ( other.gameObject.tag == "bridge" && ItemCount > 0) {
+        if (other.gameObject.tag == "bridge" && ItemCount > 0)
+        {
             ItemCount--;
             other.transform.GetComponent<MeshRenderer>().enabled = true;
         }
+    }
 
-
-        if (other.gameObject.tag == "GameOver Area" 
-        {
-             Destroy(this.gameObject);
-         }
 }
