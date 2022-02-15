@@ -57,6 +57,10 @@ public class PlayerController : MonoBehaviour
             ItemCount--;
             other.transform.GetComponent<MeshRenderer>().enabled = true;
         }
+
+        if ( other.gameObject.tag == "Finish" ) {
+            
+        }
     }
 
 }
