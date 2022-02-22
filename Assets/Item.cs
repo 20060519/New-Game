@@ -6,6 +6,7 @@ public class Item : MonoBehaviour
 {
     [SerializeField]
     public Collider targetCollider;
+    public bool isActive = true;
     // Start is called before the first frame update
     void Start()
     {

@@ -52,11 +52,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("取ったアイテムの数:" + ItemCount);
         }
 
-        if (other.gameObject.tag == "bridge" && ItemCount > 0)
+        if (other.gameObject.tag == "bridge" && ItemCount > 0 && other.transform.GetComponentInParent<Item>().isActive )
         {
             ItemCount--;
             other.transform.GetComponent<MeshRenderer>().enabled = true;
             other.transform.GetComponentInParent<Item>().targetCollider.enabled = false;
+            other.transform.GetComponentInParent<Item>().isActive = false;
             Debug.Log("木を使って橋を作った。残り："+ItemCount);
         }
 
