@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
         {
             ItemCount--;
             other.transform.GetComponent<MeshRenderer>().enabled = true;
+            other.transform.GetComponentInParent<Item>().targetCollider.enabled = false;
+            Debug.Log("木を使って橋を作った。残り："+ItemCount);
         }
 
         if ( other.gameObject.tag == "Finish" ) {
